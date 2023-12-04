@@ -7,15 +7,8 @@ readme = "README.md"
 repository = "https://github.com/jamesmunns/postcard"
 description = "A no_std + serde compatible message library for Rust"
 license = "MIT OR Apache-2.0"
-categories = [
-    "embedded",
-    "no-std",
-]
-keywords = [
-    "serde",
-    "cobs",
-    "framing",
-]
+categories = ["embedded", "no-std"]
+keywords = ["serde", "cobs", "framing"]
 documentation = "https://docs.rs/postcard/"
 
 [package.metadata.docs.rs]
@@ -29,7 +22,7 @@ version = "0.2.24"
 optional = true
 
 [dependencies.heapless]
-version = "0.7.0"
+version = "0.8.0"
 default-features = false
 features = ["serde"]
 optional = true
@@ -65,10 +58,10 @@ version = "1.0.12"
 optional = true
 
 [features]
-default = ["heapless-cas"]
+default = ["heapless-portable-atomic"]
 
 use-std = ["serde/std", "alloc"]
-heapless-cas = ["heapless", "heapless/cas"]
+heapless-portable-atomic = ["heapless", "heapless/portable-atomic"]
 alloc = ["serde/alloc", "embedded-io/alloc"]
 use-defmt = ["defmt"]
 use-crc = ["crc", "paste"]
